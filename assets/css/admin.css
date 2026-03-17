@@ -1,0 +1,109 @@
+.admin-header{
+    background:#12263A;
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    background:#06BCC1;
+    padding:8px 14px;
+    border-radius:6px;
+}
+
+.admin-container{
+    display:flex;
+    min-height:90vh;
+}
+
+.admin-sidebar{
+    width:220px;
+    background:#C5D8D1;
+    padding:20px;
+}
+
+.admin-sidebar ul{
+    list-style:none;
+}
+
+.admin-sidebar li{
+    padding:12px;
+    margin-bottom:10px;
+    background:#F4EDEA;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.admin-sidebar li.active{
+    background:#06BCC1;
+    color:white;
+}
+
+.admin-main{
+    flex:1;
+    padding:40px;
+}
+
+.stats{
+    display:flex;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat-card{
+    background:#F4D1AE;
+    padding:25px;
+    border-radius:10px;
+    flex:1;
+    text-align:center;
+}
+
+.stat-card p{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:40px;
+}
+
+.admin-table th,
+.admin-table td{
+    border-bottom:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+.accept{
+    background:#06BCC1;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:4px;
+}
+
+.reject{
+    background:#F4D1AE;
+    border:none;
+    padding:6px 10px;
+    border-radius:4px;
+}
+
+.messages{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.message-card{
+    background:#F4EDEA;
+    padding:20px;
+    border-radius:10px;
+    width:250px;
+}

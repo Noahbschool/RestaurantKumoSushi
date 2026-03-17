@@ -20,17 +20,21 @@ body {
 
 nav {
     background-color: var(--dark);
-    padding: 15px;
+    padding: 15px 30px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 30px;
+    flex: 1;
+    justify-content: center;
 }
 
 nav a {
@@ -41,6 +45,22 @@ nav a {
 
 nav a:hover {
     color: var(--accent-main);
+}
+
+.login-btn {
+    background-color: var(--accent-main);
+    color: var(--primary-bg) !important;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--accent-soft) !important;
+    color: var(--dark) !important;
 }
 
 .hero {
