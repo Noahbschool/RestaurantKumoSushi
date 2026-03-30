@@ -153,7 +153,7 @@
         <li><a href="index.php#reservation">Reserveren</a></li>
         <li><a href="index.php#contact">Contact</a></li>
     </ul>
-    <a href="login.php" class="login-btn">Inloggen</a>
+    <a href="loginpage.php" class="login-btn">Inloggen</a>
 </nav>
 
 <div class="register-section">
@@ -189,7 +189,7 @@
         </form>
 
         <div class="links">
-            Al een account? <a href="login.php">Inloggen</a>
+            Al een account? <a href="loginpage.php">Inloggen</a>
         </div>
 
         <a href="index.php" class="back-link">← Terug naar website</a>

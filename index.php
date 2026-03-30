@@ -15,7 +15,7 @@
         <li><a href="#reservation">Reserveren</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="login.php" class="login-btn">Inloggen</a>
+    <a href="loginpage.php" class="login-btn">Inloggen</a>
 </nav>
 
 <section class="hero" id="home">

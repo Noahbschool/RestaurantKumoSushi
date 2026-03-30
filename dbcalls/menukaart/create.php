@@ -1,10 +1,21 @@
 <?php
+include("../conn.php");
 
-$voornaam = $_POST["voornaam"];
+$itemimage = $_FILES["itemimage"]["name"];
+$itemprice = $_POST["itemprice"];
+$itemname = $_POST["itemname"];
+$itemingredients = $_POST["itemingredients"];
 
- $sql = "";
+$sql = "INSERT INTO menu(itemimage, itemprice, itemingredients, itemname) VALUES (:itemimage, :itemprice, :itemingredients, :itemname)";
 
-$stmt = $conn->prepare($sql);
+$stmt = $conn ->prepare($sql);
+$stmt->bindParam(":itemimage", $itemimage);
+$stmt->bindParam(":itemprice", $itemprice);
+$stmt->bindParam(":itemname", $itemname);
+$stmt->bindParam(":itemingredients", $itemingredients);
 
-$stmt ->bindParam(":voornaam", $voornaam);
-$stmt -> execute();
+
+
+$stmt->execute();
+
+header("location: ../../admin.php");

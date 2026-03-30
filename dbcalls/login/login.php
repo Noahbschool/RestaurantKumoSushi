@@ -1,11 +1,25 @@
 <?php
-include("../conn.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-$voornaam = $_POST["voornaam"];
+    $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
 
- $sql = "";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":password", $password);
+    $stmt->execute();
 
-$stmt = $conn->prepare($sql);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt ->bindParam(":voornaam", $voornaam);
-$stmt -> execute();
+    if ($user) {
+        session_start();
+        $_SESSION["user_id"] = $user["id"];
+        $_SESSION["username"] = $user["username"];
+        header("Location: ../index.php");
+        exit();
+    } else {
+        $error = "Ongeldige gebruikersnaam of wachtwoord.";
+    }
+}
+?>
