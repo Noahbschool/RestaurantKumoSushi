@@ -172,7 +172,7 @@
             <!-- echo $success here -->
         </div>
 
-        <form action="" method="POST">
+        <form action="/dbcalls/login/register.php" method="POST">
 
             <div class="form-row">
                 <input type="text" name="voornaam" placeholder="Voornaam" required>

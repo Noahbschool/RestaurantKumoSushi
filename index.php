@@ -74,7 +74,6 @@
     </div>
 </section>
 
-<?php include("dbcalls/menukaart/read.php"); ?>
 
 <footer>© 2026 Kumo Sushi Nijmegen</footer>
 
