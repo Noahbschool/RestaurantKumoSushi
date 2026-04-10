@@ -13,6 +13,21 @@ include("dbcalls/menukaart/read.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Kumo Sushi</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .div-table { display: grid; width: 100%; border-collapse: collapse; }
+        .div-table-head { display: contents; font-weight: bold; }
+        .div-table-body { display: contents; }
+        .div-table-row { display: contents; }
+        .div-table-row > div,
+        .div-table-head > div {
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        .div-table-head > div { background: #f4f4f4; font-weight: bold; }
+
+    </style>
 </head>
 
 <body>
@@ -56,31 +71,29 @@ include("dbcalls/menukaart/read.php");
 
             <h2>Reserveringen</h2>
 
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>Naam</th>
-                        <th>Email</th>
-                        <th>Datum</th>
-                        <th>Tijd</th>
-                        <th>Personen</th>
-                        <th>Actie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+            <div class="div-table admin-table" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;">
+                <div class="div-table-head">
+                    <div>Naam</div>
+                    <div>Email</div>
+                    <div>Datum</div>
+                    <div>Tijd</div>
+                    <div>Personen</div>
+                    <div>Actie</div>
+                </div>
+                <div class="div-table-body">
+                    <div class="div-table-row">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>
                             <button class="edit">Update</button>
                             <button class="delete">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2>Contact Berichten</h2>
 
@@ -92,30 +105,28 @@ include("dbcalls/menukaart/read.php");
 
             <h2>Menu Beheer</h2>
 
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>Naam</th>
-                        <th>Prijs</th>
-                        <th>Actie</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="div-table admin-table" style="grid-template-columns: 2fr 1fr 1fr; width: 100%;">
+                <div class="div-table-head">
+                    <div>Naam</div>
+                    <div>Prijs</div>
+                    <div>Actie</div>
+                </div>
+                <div class="div-table-body">
                     <?php foreach ($items as $item): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($item['itemname']) ?></td>
-                        <td>€<?= htmlspecialchars($item['itemprice']) ?></td>
-                        <td><?php
+                    <div class="div-table-row">
+                        <div><?= htmlspecialchars($item['itemname']) ?></div>
+                        <div>€<?= htmlspecialchars($item['itemprice']) ?></div>
+                        <div><?php
                             $id          = htmlspecialchars($item['id'] ?? $item['itemid'] ?? '', ENT_QUOTES);
                             $name        = htmlspecialchars($item['itemname'] ?? '', ENT_QUOTES);
                             $price       = htmlspecialchars($item['itemprice'] ?? '', ENT_QUOTES);
                             $ingredients = htmlspecialchars($item['itemingredients'] ?? '', ENT_QUOTES);
-                        ?><button type="button" class="edit" onclick="fillUpdateForm('<?= $id ?>', '<?= $name ?>', '<?= $price ?>', '<?= $ingredients ?>')">Bewerken</button></td>
-                    </tr>
+                        ?><button type="button" class="edit" onclick="fillUpdateForm('<?= $id ?>', '<?= $name ?>', '<?= $price ?>', '<?= $ingredients ?>')">Bewerken</button></div>
+                    </div>
                     <?php endforeach; ?>
 
-                    <tr>
-                        <td colspan="3">
+                    <div class="div-table-row">
+                        <div style="grid-column: 1 / -1;">
                             <form action="dbcalls/menukaart/update.php" method="post" enctype="multipart/form-data" class="menu-form">
                                 <input type="hidden" name="item_id" id="update_item_id">
                                 <input type="file" name="itemimage">
@@ -125,10 +136,10 @@ include("dbcalls/menukaart/read.php");
                                 <button type="submit" class="edit">Update</button>
                                 <button type="submit" formaction="dbcalls/menukaart/delete.php" class="delete">Delete</button>
                             </form>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h3>Nieuw Menu Item Toevoegen</h3>
             <form action="dbcalls/menukaart/create.php" method="post" enctype="multipart/form-data" class="menu-form">
@@ -152,7 +163,6 @@ include("dbcalls/menukaart/read.php");
                     <button type="submit" class="accept">+ Nieuw Item Toevoegen</button>
                 </div>
             </form>
-                        <h1 class="i-hate-php">fuck this site</h1>
         </main>
 
     </div>
