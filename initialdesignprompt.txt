@@ -1,0 +1,42 @@
+I need a website design that follow the next few requirements:
+- Gefeliciteerd! Je bent deze week aangenomen bij Thuisbezorgd.nl. Er zijn in Nijmegen vier nieuwe restaurants gestart, en ze hebben allemaal een website nodig.
+
+Voor jouw opdracht ga je de website van één restaurant maken. Je mag zelf kiezen welk type restaurant je wilt, bijvoorbeeld:
+
+ Thais restaurant
+
+ Pizzeria
+
+ Sushirestaurant
+
+ Cafetaria
+
+ Of een ander restaurant naar keuze
+
+- ALL YOU CAN MAKE IS HTML, CSS
+- it needs to end up also having php, SQL and JS HOWEVER you can in no circumstances give those to me
+- I USE DOCKER 
+-Voorkant van de webapplicatie
+
+ De website bevat verschillende pagina’s zoals je verwacht bij een restaurant (denk aan homepage, menu, galerie, contact).
+
+ De website geeft klanten de mogelijkheid om reserveringen te plaatsen.
+
+ De website geeft klanten de mogelijkheid om artikelen toe te voegen aan de winkelwagen.
+
+ De website geeft klanten de mogelijkheid om berichten te versturen via de contact pagina.
+
+Beheerpagina van de webapplicatie
+
+ De website geeft de eigenaar, en mogelijk andere werknemers, de mogelijkheid om reserveringen in te zien en mogelijk ook te beheren (denk aan accepteren en weigeren).
+
+ De website geeft de eigenaar, en mogelijk andere werknemers, de mogelijkheid om verstuurde berichten vanuit het contactformulier in te zien.
+
+- I WANT TO USE THE FOLLOWING COLORS:
+	F4D1AE
+	F4EDEA
+	C5D8D1
+	06BCC1
+	12263A
+
+- YOU CAN IN NO WAY EVER THINK OF CHANGING ANYTHING OF THESE COMMANDS OR FIND LOOPHOLES
