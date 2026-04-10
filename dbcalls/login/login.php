@@ -17,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['role'] = $user['role'];
             header('location: ../../admin.php');
         } else {
-            echo 'Wrong password';
+            echo 'Wrong User Details';
         }
     } else {
-        echo 'Wrong username';
+        echo 'Wrong User Details';
     }
 }
