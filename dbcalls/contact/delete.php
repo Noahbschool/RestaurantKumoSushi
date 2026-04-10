@@ -1,8 +1,9 @@
 <?php
+include("../conn.php");
 
 $contactid = $_POST["contactid"];
 
-$sql = "DELETE FROM menu WHERE contactid= :contactid";
+$sql = "DELETE FROM contact WHERE contactid= :contactid";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(":contactid", $contactid);

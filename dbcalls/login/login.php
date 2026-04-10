@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch();
     if ($user) {
         if ($password == $user['password']) {
+            $_SESSION['role'] = $user['role'];
             header('location: ../../admin.php');
         } else {
             echo 'Wrong password';

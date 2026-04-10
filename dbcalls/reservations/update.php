@@ -8,7 +8,7 @@ $reservationdate = $_POST["reservationdate"];
 $reservationtime = $_POST["reservationtime"];
 $reservationamount = $_POST["reservationamount"];
 
-$sql = "UPDATE reservations SET reservationname = :reservationname, reservationemail = :reservationemail, reservationdate = :reservationdate, reservationtime = :reservationtime, reservationamount = WHERE reservationid = :reservationid";
+$sql = "UPDATE reservations SET reservationname = :reservationname, reservationemail = :reservationemail, reservationdate = :reservationdate, reservationtime = :reservationtime, reservationamount = :reservationamount WHERE reservationid = :reservationid";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(":reservationname", $reservationname);
@@ -16,6 +16,7 @@ $stmt->bindParam(":reservationemail", $reservationemail);
 $stmt->bindParam(":reservationdate", $reservationdate);
 $stmt->bindParam(":reservationtime", $reservationtime);
 $stmt->bindParam(":reservationamount", $reservationamount);
+$stmt->bindParam("reservationid", $reservationid);
 
 $stmt->execute();
 header("location: ../../admin.php");

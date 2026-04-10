@@ -541,3 +541,14 @@ button.accept:hover {
     font-weight: bold;
     color: var(--accent-main);
 }
+.full-width-form {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.full-width-form form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}

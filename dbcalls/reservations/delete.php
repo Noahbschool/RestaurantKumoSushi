@@ -3,7 +3,7 @@ include "../conn.php";
 
 $reservationid = $_POST["reservationid"];
 
-$sql = "DELETE FROM menu WHERE reservationid= :reservationid";
+$sql = "DELETE FROM reservations WHERE reservationid= :reservationid";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(":reservationid", $reservationid);
